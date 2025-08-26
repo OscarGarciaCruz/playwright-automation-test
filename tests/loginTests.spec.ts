@@ -1,49 +1,55 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 import { LoginPage } from "../pages/loginPage";
 
 test.describe('Login Tests',()=>{
-    let loginPage;
 
     test.beforeEach(async ({ page }) => {
-     loginPage = new LoginPage(page);
      await page.goto('/');
     });
 
-    test('Login with empty fields', async ({page}) => {
+    test('Login with empty fields', async ({ page }) => {
      await test.step('Check that the page has loaded correctly',async () => {
-         await loginPage.checkLoginPage();
+        const loginPage = new LoginPage(page); 
+        await loginPage.checkLoginPage();
      });
        await test.step('Verify the errors for each field appear',async () => {
-         await loginPage.emptyFieldsAlert();
+        const loginPage = new LoginPage(page); 
+        await loginPage.emptyFieldsAlert();
      });
         
     });
 
-    test('Login with invalid username and password', async ({page}) => {
+    test('Login with invalid username and password', async ({ page }) => {
      await test.step('Check that the page has loaded correctly',async () => {
-         await loginPage.checkLoginPage();
+        const loginPage = new LoginPage(page); 
+        await loginPage.checkLoginPage();
      });
        await test.step('Verify the invalid credential alert appears',async () => {
-         await loginPage.invalidLogin();
+        const loginPage = new LoginPage(page); 
+        await loginPage.invalidLogin();
      });
         
     });
 
-    test('Login with empty password', async ({page}) => {
+    test('Login with empty password', async ({ page }) => {
      await test.step('Check that the page has loaded correctly',async () => {
-         await loginPage.checkLoginPage();
+        const loginPage = new LoginPage(page); 
+        await loginPage.checkLoginPage();
      });
        await test.step('Verify empty password alert appears',async () => {
-         await loginPage.invalidLoginMissingPassword();
+        const loginPage = new LoginPage(page); 
+        await loginPage.invalidLoginMissingPassword();
      });
         
     });
 
-    test('Login with empty username', async ({page}) => {
+    test('Login with empty username', async ({ page }) => {
      await test.step('Check that the page has loaded correctly',async () => {
-         await loginPage.checkLoginPage();
+        const loginPage = new LoginPage(page); 
+        await loginPage.checkLoginPage();
      });
        await test.step('Verify empty username alert appears',async () => {
+         const loginPage = new LoginPage(page);
          await loginPage.invalidLoginMissingUsername();
      });
         

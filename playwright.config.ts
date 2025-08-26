@@ -29,7 +29,11 @@ export default defineConfig({
      baseURL: 'https://opensource-demo.orangehrmlive.com/web/index.php/auth',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'retain-on-failure',
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
+    actionTimeout: 12000,
+    navigationTimeout: 12000
   },
 
   /* Configure projects for major browsers */
