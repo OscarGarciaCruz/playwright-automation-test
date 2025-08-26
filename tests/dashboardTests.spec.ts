@@ -1,6 +1,6 @@
-const { test, expect } = require('@playwright/test');
-const { LoginPage } = require('../pages/loginPage');
-const { DashboardPage } = require('../pages/dashboardPage');
+import { test, expect } from '@playwright/test';
+import { LoginPage } from "../pages/loginPage";
+import { DashboardPage } from '../pages/dashboardPage';
 
 test.describe('Dashboard Tests',()=>{
     
