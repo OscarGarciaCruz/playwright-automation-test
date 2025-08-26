@@ -27,11 +27,11 @@ export class DashboardPage{
         this.userDropDown = page.getByRole('banner').getByRole('img', { name: 'profile picture' });
         this.logoutButton = page.getByRole('menuitem', { name: 'Logout' });
         this.timeAtWorkTitle = page.getByText('Time at Work');
-        this.timeAtWorkCard = page.getByText('Time at WorkPunched');
+        this.timeAtWorkCard = page.locator('#app > div.oxd-layout.orangehrm-upgrade-layout > div.oxd-layout-container > div.oxd-layout-context > div > div:nth-child(1) > div');
         this.myActionsTitle = page.getByText('My Actions');
-        this.myActionsCard = page.getByText('My Actions(1) Pending Self');
+        this.myActionsCard = page.locator('#app > div.oxd-layout.orangehrm-upgrade-layout > div.oxd-layout-container > div.oxd-layout-context > div > div:nth-child(2) > div');
         this.quickLaunchTitle = page.getByText('Quick Launch');
-        this.quickLaunchCard = page.getByText('Quick LaunchAssign LeaveLeave');
+        this.quickLaunchCard = page.locator('#app > div.oxd-layout.orangehrm-upgrade-layout > div.oxd-layout-container > div.oxd-layout-context > div > div:nth-child(3) > div:nth-child(1)');
         this.buzzLatestPostTitle = page.getByText('Buzz Latest Posts');
         this.buzzLatestPostCard = page.locator('#app > div.oxd-layout.orangehrm-upgrade-layout > div.oxd-layout-container > div.oxd-layout-context > div > div:nth-child(4) > div');
         this.employeeOnLeaveTitle = page.getByText('Employees on Leave Today');
